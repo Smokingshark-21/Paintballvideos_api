@@ -13,7 +13,7 @@ import retrofit2.http.Query
 
 const val BASE_URL = "https://www.googleapis.com/youtube/v3/"
 
-const val TOKEN = "AIzaSyCNHt4BuxvMjGwmBG9VSfe3eQkx-tFLBsY"
+const val TOKEN = "example"
 
 val client:OkHttpClient = OkHttpClient.Builder().addInterceptor{ chain ->
     val newRequest: Request = chain.request().newBuilder()
@@ -34,7 +34,7 @@ private val retrofit = Retrofit.Builder()
     .build()
 
 interface VideoApiService {
-    @GET("search?part=snippet&eventType=live&maxResults=25&type=video&key=[YOUR_API_KEY]&")
+    @GET("search?part=snippet&eventType=live&maxResults=25&type=video&key=[example]&")
     suspend fun getData(
         @Query("q") search: String
     ): Video
